@@ -1,47 +1,70 @@
+* {
+  font-family: "Courier New";
+  font-weight: bold;
+  color: #00FF00;
+}
+
 body {
-  background-color: #e4e4e4;
+  background: black;
 }
 
-h1 {
+#start-screen,
+#game-screen {
   text-align: center;
+  overflow: hidden;  
 }
 
-#notes {
-  margin: 0 auto;
-  width: 75%;
+#game-screen.show {
+  transition-delay: 1s;
 }
 
-.note {
-  background-color: #fdffb7;
-  border: 8px solid #d4daa7;
-  border-radius: 8px;
-  padding: 10px;
+.show {
+  max-height: 1000px;
+  transition-duration: 1s;
+  display: block;
 }
 
-form {
-  text-align: center;
+.hide {
+  max-height: 0;
+  overflow: hidden;
+  transition-duration: 1s;
 }
 
-input {
-  width: 50%;
-}
-
-input,
-button {
-  padding: 10px;
-}
-
-button {
-  background-color: #ff9494;
-  border: none;
+#start {
+  background-color: black;
+  border: 5px solid #00FF00;
   border-radius: 5px;
+  font-size: 3em;
+  display: block;
+  margin: 100px auto;
 }
 
-button:hover {
+#start:hover {
   cursor: pointer;
-  background-color: #fe2222;
+  background-color: #00FF00;
+  color: black;
 }
 
-button:focus {
+#start:active,
+#start:focus {
   outline: none;
+}
+
+#word-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#word-list > li {
+  padding: 5px;
+}
+
+#word-list > li.disabled {
+  color: #ccc;
+}
+
+#word-list > li:not(.disabled):hover {
+  color: yellow;
+  font-size: 1.5em;
+  cursor: pointer;
 }

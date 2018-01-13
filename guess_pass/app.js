@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // check whether the game is over
       if (similarityScore === password.length) {
         toggleClasses(d3.select("#winner"), 'hide', 'show');
-        d3.select(this).on('click', null);
+        d3 .select(this).on('click', null);
       } else if (guessCount === 0) {
         toggleClasses(d3.select("#loser"), 'hide', 'show');
         d3.select(this).on('click', null);

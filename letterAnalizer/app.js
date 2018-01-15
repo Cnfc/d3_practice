@@ -1,9 +1,9 @@
 
-var weigth = 800;
+var width = 800;
 var height = 400;
 var barPadding = 10;
 var svg = d3.select("svg")
-                .attr("weigth", weigth)
+                .attr("width", width)
                 .attr("height", height);
 
 d3.select("#reset")
@@ -24,7 +24,7 @@ d3.select("form")
       var input = d3.select("input");
       var text = input.property("value");
       var data = getFrequencies(text);
-      var barWidth = weigth/ data.length - barPadding;
+      var barWidth = width/ data.length - barPadding;
 
       var letters = svg
                       .selectAll(".letter")
@@ -62,9 +62,15 @@ d3.select("form")
       letterEnter.merge(letters)
           .select("text")
               .attr("x", function(d,i){
-                return (barWidth + barPadding) * i + barWidth /2;
+                return ( barWidth + barPadding ) * i + barWidth /2;
               })
               .attr("text-anchor", "middle")
+              .attr("y", function(d) {
+                return height - d.count * 20 - 10;
+              })
+              .text(function(d) {
+                return d.character;
+              });
 
       d3.select("#phrase")
           .text("Analysis of: " + text);

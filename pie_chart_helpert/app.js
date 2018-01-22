@@ -64,6 +64,7 @@ function makeGraph(year) {
     .append('path')
       .classed('arc', true)
     .merge(update)
+    // .transition()
       .attr('fill', d => colorScale(d.data.continent))
       .attr('stroke', 'black')
       .attr('d', path);

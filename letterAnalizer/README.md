@@ -1,3 +1,3 @@
-# Guess the Password
+# letter analizer
 
-Simple browser game with an ES2015 refactor & D3.
+Simple browser app with an ES2015 refactor & D3.

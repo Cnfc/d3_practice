@@ -1,17 +1,17 @@
 // http://data.un.org/Data.aspx?d=POP&f=tableCode%3a22
-//
-// var width = 600;
-// var height = 600;
-// var minYear = d3.min(birthData, d => d.year);
-// var maxYear = d3.max(birthData, d => d.year);
-// var orderedMonths = [
-//   "January", "February", "March", "April", "May", "June",
-//   "July", "August", "September", "October", "November", "December"
-// ];
-// var colors = [
-//   "#aec7e8", "#a7cfc9", "#9fd7a9", "#98df8a", "#bac78e", "#ddb092",
-//   "#ff9896", "#ffa48c", "#ffaf82", "#ffbb78", "#e4bf9d", "#c9c3c3"
-// ];
+
+var width = 600;
+var height = 600;
+var minYear = d3.min(birthData, d => d.year);
+var maxYear = d3.max(birthData, d => d.year);
+var orderedMonths = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var colors = [
+  "#aec7e8", "#a7cfc9", "#9fd7a9", "#98df8a", "#bac78e", "#ddb092",
+  "#ff9896", "#ffa48c", "#ffaf82", "#ffbb78", "#e4bf9d", "#c9c3c3"
+];
 
 var quarterColors = ["#1f77b4", "#2ca02c", "#d62728", "#ff7f0e"];
 

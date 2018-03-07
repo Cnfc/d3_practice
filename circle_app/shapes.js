@@ -1,15 +1,15 @@
 class Shape {
-    constructor(x,y,size) {
-        this.setPosition(x,y);
+    constructor(x, y, size) {
+        this.setPosition(x, y);
         this.setSize(size);
     }
 
-    setPosition(x,y){
+    setPosition(x, y) {
         this.x = x;
         this.y = y;
     }
 
-    setSize(size){
+    setSize(size) {
         this.size = size < 0 ? 0 : size;
     }
 
@@ -21,7 +21,7 @@ class Shape {
         this.fillColor = color;
     }
 
-    setStrokeWidth(width){
+    setStrokeWidth(width) {
         this.strokeWidth = width;
     }
 
@@ -36,30 +36,29 @@ class Shape {
     render(ctx) {
         throw new Error("this is an abstract shape");
     }
-
 }
 
 class Circle extends Shape {
     render(ctx) {
         ctx.beginPath();
 
-        ctx.arc(0,0, this.size / 2,0,2 * Math.PI, false);
+        ctx.arc(0, 0, this.size / 2, 0, 2 * Math.PI, false);
 
         ctx.fillStyle = this.fillColor;
         ctx.fill();
         ctx.lineWidth = this.strokeWidth;
-        ctx.strokeStyle = this.strokeStyle;
+        ctx.strokeStyle = this.strokeColor;
         ctx.stroke();
     }
 }
 
 class Quad extends Shape {
-    render (ctx) {
+    render(ctx) {
         ctx.beginPath();
 
         ctx.rect(
-            -this.size /2,
-            -this.size/2,
+            -this.size / 2,
+            -this.size / 2,
             this.size,
             this.size
         );
@@ -67,7 +66,7 @@ class Quad extends Shape {
         ctx.fillStyle = this.fillColor;
         ctx.fill();
         ctx.lineWidth = this.strokeWidth;
-        ctx.strokeStyle = this.strokeStyle;
+        ctx.strokeStyle = this.strokeColor;
         ctx.stroke();
     }
 }
@@ -77,14 +76,22 @@ class Triangle extends Shape {
         ctx.beginPath();
 
         ctx.moveTo(0, -this.size / 2);
-        ctx.moveTo(this.size / 2, this.size / 2);
+        ctx.lineTo(this.size / 2, this.size / 2);
         ctx.lineTo(-this.size / 2, this.size / 2);
-        ctx.clonePath();
+        ctx.closePath();
 
-        ctx.fillColor = this.fillColor;
+        ctx.fillStyle = this.fillColor;
         ctx.fill();
         ctx.lineWidth = this.strokeWidth;
         ctx.strokeStyle = this.strokeColor;
         ctx.stroke();
     }
 }
+
+
+/*
+strokeColor
+fillColor
+position
+size
+*/

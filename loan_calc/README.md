@@ -1,1 +1,1 @@
-Loan Calculator to years on js.
+Loan Calculator && guess game  on js.

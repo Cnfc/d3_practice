@@ -1,11 +1,11 @@
-// // Create variables
-// const minNum = document.querySelector(".min-num"),
-//       maxNum = document.querySelector(".max-num"),
-//       submit = document.querySelector("#guess-btn"),
-//       input = document.querySelector("#guess-input"),
-//       message = document.querySelector(".message");
-//
-// let min = 1,
+// Create variables
+const minNum = document.querySelector(".min-num"),
+      maxNum = document.querySelector(".max-num"),
+      submit = document.querySelector("#guess-btn"),
+      input = document.querySelector("#guess-input"),
+      message = document.querySelector(".message");
+
+let min = 1,
     max = 10,
     winningNum = 2,
     guessesLeft = 3;

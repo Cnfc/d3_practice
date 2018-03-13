@@ -1,37 +1,131 @@
-// Create variables
-const minNum = document.querySelector(".min-num"),
-      maxNum = document.querySelector(".max-num"),
-      submit = document.querySelector("#guess-btn"),
-      input = document.querySelector("#guess-input"),
-      message = document.querySelector(".message");
 
-let min = 1,
-    max = 10,
-    winningNum = 2,
-    guessesLeft = 3;
 
-// Submit event listener
-submit.addEventListener("click", function(){
-    // Check if correct number is typed in
-    if(! isNaN() ||input.value < min || input.value > max){
-        message.textContent = "Please enter a number in the range";
-        message.style.color = "red";
+let min = 1;
+let max = 10;
+let winningNum = 3;
+let guessesLeft = 3;
+
+
+const game = document.querySelector("#game");
+const minNum = document.querySelector(".min-num");
+const maxNum = document.querySelector(".max-num");
+const guessBtn = document.querySelector("#guess-btn");
+const guessInput = document.querySelector("#guess-input");
+const message = document.querySelector(".message");
+
+minNum.textContent = min;
+maxNum.textContent = max;
+
+guessBtn.addEventListener("click", function(){
+    let guess = parseInt(guessInput.value);
+    console.log(guess);
+    if(guess === winningNum) {
+        guessInput.disabled = true;
+        guessInput.style.borderColor = "green";
+        setMessage("You win !!!", "green");
+    }
+    if(isNaN(guess) || guess< min || guess > max) {
+        setMessage(`Please enter a number between ${min} and ${max}`, "red");
+    }
+    else {
+      // Wrong
+        console.log("You have faled");
     }
 
-    // If won
-    if(parseInt(input.value) === winningNum){
-        message.textContent = "Congrats. You won!!";
-        message.style.color = "green";
-        input.style.borderColor = "green";
-    }else {
-        // If wrong guess but has more guesses
-        if(guessesLeft){
-            message.textContent = "Please try again";
-            message.style.color = "red";
-            guessesLeft -= 1;
-        }else {
-            message.textContent = "You ran out of guesses. Please play again!"
-            message.style.color = "red";
-        }
-    }
+
 });
+
+function setMessage(msg, color) {
+    message.style.color = color;
+    message.textContent = msg;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
